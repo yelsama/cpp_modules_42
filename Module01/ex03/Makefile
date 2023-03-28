@@ -1,6 +1,6 @@
-NAME = ex00
+NAME = ex03
 
-SOURCES = main.cpp Zombie.cpp zombieHorde.cpp \
+SOURCES = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp \
 
 OBJECTS = $(SOURCES:%.cpp=%.o)
 
