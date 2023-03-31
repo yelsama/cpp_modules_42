@@ -1,6 +1,6 @@
 NAME = ex00
 
-SOURCES = main.cpp Zombie.cpp zombieHorde.cpp \
+SOURCES = main.cpp Zombie.cpp randomChump.cpp newZombie.cpp \
 
 OBJECTS = $(SOURCES:%.cpp=%.o)
 

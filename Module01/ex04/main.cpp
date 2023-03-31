@@ -1,62 +1,52 @@
 #include <iostream>
 #include <fstream>
+#include <sstream>
 
 int	main(int argc, char **argv)
 {
+
 	if (argc != 4)
 	{
 		std::cout<<"not suitable arguments\n";
 		return 1;
 	}
-	
-	std::string	filename = argv[1];
-	std::string	s1 = argv[2];
-	std::string s2 = argv[3];
 
-	std::ifstream	infile(filename);
+	std::ifstream	infile(argv[1]);
 	if (!infile.is_open())
 	{
 		std::cout<<"Error opening file\n";
 		return 1;
 	}
+	std::ostringstream	buffer;
+	buffer<<infile.rdbuf();
+	std::string contetns = buffer.str();
+	infile.close();
 
 	std::ofstream	outfile;
 	outfile.open((std::string(argv[1]) + ".replace").c_str());
 	if (outfile.fail())
 	{
-		infile.close();
 		std::cout<<"Error creating file\n";
 		return 1;
 	}
 
-	std::string	line;
 	std::string	tmp;
-	std::string	new_line;
-	int	line_num = 0;
-	unsigned long pos;
-	unsigned long	s1_len = s1.length();
-	unsigned long	lower_edge;
-	while (getline(infile, line))
+	std::string	new_contents;
+	unsigned long pos = 0;
+	unsigned long	s1_len = std::strlen(argv[2]);
+	unsigned long	lower_edge = 0;
+
+	while ((pos = contetns.find(argv[2], pos)) < contetns.length())
 	{
-		if (line_num)
-			outfile<<"\n";
-		pos = 0;
-		lower_edge = 0;
-		new_line.clear();
-		while ((pos = line.find(s1, pos)) != std::string::npos)
-		{
-			tmp = line.substr(lower_edge, pos);
-			new_line.append(tmp);
-			new_line.append(s2);
-			pos += s1_len;
-			lower_edge = pos;
-		}
-		tmp = line.substr(lower_edge);
-		new_line.append(tmp);
-		outfile<<new_line;
-		line_num++;
+		tmp = contetns.substr(lower_edge, pos - lower_edge);
+		new_contents.append(tmp);
+		new_contents.append(argv[3]);
+		pos += s1_len;
+		lower_edge = pos;
 	}
-	infile.close();
+	tmp = contetns.substr(lower_edge);
+	new_contents.append(tmp);
+	outfile<<new_contents;
 	outfile.close();
 	return 0;
 }
