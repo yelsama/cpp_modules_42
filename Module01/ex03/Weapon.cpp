@@ -2,14 +2,13 @@
 
 Weapon::Weapon(){}
 
-Weapon::Weapon(std::string weapon)
+Weapon::Weapon(std::string weapon): type(weapon)
 {
-	type = weapon;
 };
 
 Weapon::~Weapon(){};
 
-std::string Weapon::getType(void)
+const std::string &Weapon::getType(void)  
 {
 	return type;
 }
