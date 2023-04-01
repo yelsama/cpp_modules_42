@@ -8,7 +8,7 @@ Weapon::Weapon(std::string weapon): type(weapon)
 
 Weapon::~Weapon(){};
 
-const std::string &Weapon::getType(void)  
+const std::string &Weapon::getType (void) const 
 {
 	return type;
 }
