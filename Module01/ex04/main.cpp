@@ -36,7 +36,7 @@ int	main(int argc, char **argv)
 	unsigned long	s1_len = std::strlen(argv[2]);
 	unsigned long	lower_edge = 0;
 
-	while ((pos = contetns.find(argv[2], pos)) < contetns.length())
+	while (s1_len && (pos = contetns.find(argv[2], pos)) < contetns.length())
 	{
 		tmp = contetns.substr(lower_edge, pos - lower_edge);
 		new_contents.append(tmp);

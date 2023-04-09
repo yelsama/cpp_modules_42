@@ -5,7 +5,9 @@ Zombie::Zombie(std::string str)
 	name = str;
 }
 
-Zombie::Zombie(){}
+Zombie::Zombie(){
+	name = "koko";
+}
 
 Zombie::~Zombie()
 {
