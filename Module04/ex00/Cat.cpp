@@ -6,7 +6,7 @@ Cat::Cat()
 	this->type = "Cat";
 }
 
-Cat::Cat(const Cat &oher)
+Cat::Cat(const Cat &oher): Animal()
 {
 	std::cout<<"Cat Assign Constructor called \n\n";
 	this->type = oher.type;

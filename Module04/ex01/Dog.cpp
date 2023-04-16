@@ -7,7 +7,7 @@ Dog::Dog()
 	this->_brain = new Brain;
 }
 
-Dog::Dog(const Dog &other)
+Dog::Dog(const Dog &other): Animal()
 {
 	std::cout<<"Dog Assign Constructor called \n\n";
 	this->type = other.type;

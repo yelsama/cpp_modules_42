@@ -4,7 +4,7 @@ SOURCES = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain
 
 OBJECTS = $(SOURCES:%.cpp=%.o)
 
-CC = C++
+CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)

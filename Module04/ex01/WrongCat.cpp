@@ -6,7 +6,7 @@ WrongCat::WrongCat()
 	this->type = "WrongCat";
 }
 
-WrongCat::WrongCat(const WrongCat &oher)
+WrongCat::WrongCat(const WrongCat &oher): WrongAnimal()
 {
 	std::cout<<"WrongCat Assign Constructor called \n\n";
 	this->type = oher.type;

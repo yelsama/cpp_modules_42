@@ -6,7 +6,7 @@ Dog::Dog()
 	this->type = "Dog";
 }
 
-Dog::Dog(const Dog &oher)
+Dog::Dog(const Dog &oher): Animal()
 {
 	std::cout<<"Dog Assign Constructor called \n\n";
 	this->type = oher.type;
