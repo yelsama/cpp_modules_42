@@ -8,6 +8,8 @@ int main()
 {
 	const Animal *a = new Cat();
 	a->makeSound();
+	Dog orig;
+	Dog copy(orig);
 	// a->getType();
 	delete a;
 	// Animal b;
