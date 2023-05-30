@@ -11,7 +11,7 @@ Cat::Cat(const Cat &other): Animal()
 {
 	std::cout<<"Cat Assign Constructor called \n\n";
 	this->type = other.type;
-	*this->_Brain = *other._Brain;
+	this->_Brain = new Brain(*other._Brain);
 }
 
 Cat::~Cat()
