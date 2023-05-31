@@ -1,6 +1,7 @@
 NAME = ex03
 
 SOURCES = main.cpp AMateria.cpp ICharacter.cpp Ice.cpp Cure.cpp \
+			Character.cpp \
 
 OBJECTS = $(SOURCES:%.cpp=%.o)
 
