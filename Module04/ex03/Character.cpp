@@ -59,6 +59,7 @@ void Character::unequip(int idx)
 {
 	if (idx >= IDX_N || idx < 0)
 		return;
+	delete this->_materia[idx];
 	this->_materia[idx] = NULL;
 }
 
