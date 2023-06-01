@@ -33,7 +33,11 @@ Character &Character::operator=(const Character &other)
 	if (this != &other)
 	{
 		for (int i = 0; i < IDX_N; i++)
-			this->_materia[i] = other._materia[i];
+			if(this->_materia[i])
+				delete this->_materia[i];
+		for(int i = 0; i < IDX_N; i++)
+			if (other._materia[i])
+				this->_materia[i] = other._materia[i]->clone();
 	}
 	return *this;
 }
@@ -53,6 +57,7 @@ void Character::equip(AMateria *m)
 			return;
 		}
 	}
+	delete m;
 }
 
 void Character::unequip(int idx)

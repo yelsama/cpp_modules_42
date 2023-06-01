@@ -22,6 +22,10 @@ int main()
 	delete j;//should not create a leak
 	delete i;
 	std::cout<<"######################################################################\n";
+	WrongAnimal *wa = new WrongCat();
+	wa->makeSound();
+	delete wa;
+	std::cout<<"######################################################################\n";
 	// Animal *k;
 	Cat	m;
 	m.setIdea(7, "I have fun\n");
