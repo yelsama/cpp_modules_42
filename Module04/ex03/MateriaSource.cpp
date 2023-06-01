@@ -12,7 +12,8 @@ MateriaSource::MateriaSource(const MateriaSource & other)
 	{
 		if (other._materia[i])
 			this->_materia[i] = other._materia[i]->clone();
-		else this->_materia[i] = NULL;
+		else 
+			this->_materia[i] = NULL;
 	}
 }
 
