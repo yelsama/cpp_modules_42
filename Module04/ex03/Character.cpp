@@ -23,7 +23,9 @@ Character::Character(const Character &other)
 
 Character::~Character()
 {
-
+	for (int i = 0; i < IDX_N; i++)
+		if (this->_materia[i])
+			delete this->_materia[i];
 }
 
 Character &Character::operator=(const Character &other)

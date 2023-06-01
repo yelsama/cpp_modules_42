@@ -55,3 +55,10 @@ AMateria *MateriaSource::createMateria(std::string const &type)
 	}
 	return (NULL);
 }
+
+MateriaSource::~MateriaSource()
+{
+	for (int i = 0; i < 4; ++i)
+		if (this->_materia[i])
+			delete this->_materia[i];
+}
