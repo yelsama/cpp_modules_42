@@ -5,13 +5,19 @@ Character::Character()
 
 }
 
+Character::Character(std::string name)
+{
+	this->_name = name;
+	for (int i = 0; i < IDX_N; i++)
+		this->_materia[i] = NULL;
+}
+
 Character::Character(const Character &other)
 {
 	this->_name = other._name;
 	for (int i = 0; i < IDX_N; i++)
 	{
-		AMateria *tmp = other._materia[i];
-		
+		this->_materia[i] = other._materia[i]->clone();
 	}
 }
 

@@ -4,16 +4,17 @@
 #include <iostream>
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
-#define IDX_N 4
 
 class Character: public ICharacter
 {
 	private:
 		std::string _name;
 		AMateria	*_materia[IDX_N];
+		
+		Character();
 	
 	public:
-		Character();
+		Character(std::string name);
 		Character(const Character &other);
 		~Character();
 		Character &operator=(const Character &other);

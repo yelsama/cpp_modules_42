@@ -31,11 +31,11 @@ std::string const &AMateria::getType() const
 	return this->_type;
 }
 
-AMateria *AMateria::clone() const
-{
-	//object of abstract class type "AMateria" is not allowed:
-	// return (new AMateria(*this));
-}
+// AMateria *AMateria::clone() const
+// {
+// 	//object of abstract class type "AMateria" is not allowed:
+// 	return (new AMateria(*this));
+// }
 
 void AMateria::use(ICharacter & target)
 {

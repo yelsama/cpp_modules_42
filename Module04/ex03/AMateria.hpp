@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include "ICharacter.hpp"
+#define IDX_N 4
+
+class ICharacter;
 
 class AMateria
 {
@@ -12,8 +15,6 @@ class AMateria
 	protected:
 		std::string	_type;
 		int			_index;
-
-		AMateria(void);
 
 	public:
 		AMateria(std::string const & type);
