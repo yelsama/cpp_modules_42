@@ -22,4 +22,15 @@ int main()
 	delete me;
 	delete src;
 	return 0;
+	// ##########
+	// IMateriaSource* src = new MateriaSource();
+	// src->learnMateria(new Ice());
+	// src->learnMateria(new Cure());
+	
+	// Character chr("Yassin");
+	// Character chr1("Moa");
+	// chr1.equip(src->createMateria("ice"));
+	// chr = chr1;
+	// delete src;
+	// return 0;
 }
