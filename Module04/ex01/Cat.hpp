@@ -12,7 +12,7 @@ private:
 public:
 	Cat();
 	Cat(const Cat &other);
-	~Cat();
+	virtual ~Cat();
 	Cat	&operator=(const Cat &other);
 	void	makeSound() const;
 	void	setIdea(int index, std::string idea);
