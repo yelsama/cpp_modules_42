@@ -14,7 +14,6 @@ class AMateria
 
 	protected:
 		std::string	_type;
-		int			_index;
 
 	public:
 		AMateria(std::string const & type);

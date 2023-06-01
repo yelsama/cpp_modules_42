@@ -8,7 +8,6 @@ AMateria::AMateria(std::string const & type)
 AMateria::AMateria(const AMateria &other)
 {
 	this->_type = other._type;
-	this->_index = other._index;
 }
 
 AMateria::~AMateria()
@@ -19,10 +18,7 @@ AMateria::~AMateria()
 AMateria &AMateria::operator=(const AMateria &other)
 {
 	if (this != &other)
-	{
 		this->_type = other._type;
-		this->_index = other._index;
-	}
 	return *this;
 }
 
